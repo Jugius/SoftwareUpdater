@@ -3,7 +3,7 @@
 public class Release
 {
     public Guid Id { get; set; }
-    public string Version { get; set; }
+    public Version Version { get; set; }
     public DateTime ReleaseDate { get; set; }
     public string Kind { get; set; }
     public bool IsFinal { get; set; }

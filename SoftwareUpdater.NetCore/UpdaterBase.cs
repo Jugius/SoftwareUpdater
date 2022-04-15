@@ -35,4 +35,12 @@ public abstract class UpdaterBase
         }
     }
 
+    internal virtual Release GetRelevantRelease(Release[] releases) 
+    {
+        if (releases == null || releases.Length == 0) return null;
+        return releases.MaxBy(a => a.Version);
+    }
+    internal virtual ApiSoftware.Entities.File GetRelevantFile(Release release) => release.Files.FirstOrDefault(a => a.Kind.Equals("update", StringComparison.OrdinalIgnoreCase));
+
+
 }
